@@ -24,7 +24,7 @@ source:
   sha256: 2e97727ea5c943d0757e564fe87818a5c8c3d27bc78d60a7aaab8874e3ec5960  # [win]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx]
 
 test:
@@ -64,6 +64,9 @@ outputs:
       doc_url: https://docs.nvidia.com/cuda/nvrtc/
 
   - name: cuda-nvrtc-dev
+    build:
+      run_exports:
+        - {{ pin_subpackage("cuda-nvrtc", max_pin="x") }}
     files:
       - lib/libnvrtc*.so                            # [linux]
       - lib/pkgconfig                               # [linux]
