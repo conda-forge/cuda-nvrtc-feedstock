@@ -1,6 +1,6 @@
 {% set name = "cuda-nvrtc" %}
-{% set version = "12.0.76" %}
-{% set cuda_version = "12.0" %}
+{% set version = "12.1.105" %}
+{% set cuda_version = "12.1" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
 {% set platform = "linux-sbsa" %}  # [aarch64]
@@ -18,13 +18,13 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvrtc/{{ platform }}/cuda_nvrtc-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: 0a4ebc9a1516a5e00f14c69365ba782dcfab545d2abb15740569970f89855bff  # [linux64]
-  sha256: a8a5ad2c6823435762acb209fbfb032d22fc3d09c4bfc0cade8d3734f4a26c60  # [ppc64le]
-  sha256: 40d88b96fd41b28f2c5a14fa14a2c16559b0abb77689d1f85525789b23e21cad  # [aarch64]
-  sha256: 2e97727ea5c943d0757e564fe87818a5c8c3d27bc78d60a7aaab8874e3ec5960  # [win]
+  sha256: bb15706aca6760770f0bfb814517f875ab0cfd479bc6b1d5dd7792c5ded8317b  # [linux64]
+  sha256: 9b931993944a6fe82a996bf765e14360e1f27c6ee2ca77316be6bb2b26e4bc81  # [ppc64le]
+  sha256: 0b42518c99cc31bb45ccbecde0de6f8d60f846dd822656eeeb56e78a91a35f0c  # [aarch64]
+  sha256: 7fa294726483b10815305fe1c07c9ceb23e048fc43bb459775eb68dee82d1a8f  # [win]
 
 build:
-  number: 2
+  number: 0
   binary_relocation: false
   skip: true  # [osx]
 
@@ -161,4 +161,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - adibbley
+    - conda-forge/cuda
