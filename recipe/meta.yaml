@@ -24,7 +24,7 @@ source:
   sha256: f140545e06d0d10780c1382a577db2e2c242db7a2d94970f0e6026b2d01aeb1b  # [win]
 
 build:
-  number: 1
+  number: 2
   binary_relocation: false
   skip: true  # [osx]
 
@@ -53,7 +53,7 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
-        - sysroot_{{ target_platform }} 2.17    # [linux]
+        - {{ stdlib("c") }}
         - patchelf <0.18.0                      # [linux]
       host:
          - cuda-version {{ cuda_version }}
@@ -87,7 +87,7 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
-        - sysroot_{{ target_platform }} 2.17    # [linux]
+        - {{ stdlib("c") }}
       host:
         - cuda-version {{ cuda_version }}
       run:
@@ -126,7 +126,7 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
-        - sysroot_{{ target_platform }} 2.17    # [linux]
+        - {{ stdlib("c") }}
       host:
         - cuda-version {{ cuda_version }}
       run:
