@@ -22,7 +22,7 @@ source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvrtc/{{ platform }}/cuda_nvrtc-{{ platform }}-{{ version }}-archive.{{ extension }}
   sha256: a4289ba86f0deeccf4e1d94c58559eae4c8184fcb6eaade8fcab45584e6cf402  # [linux64]
   sha256: 8b8218447645909934712085cad0de259383b5b3f6fd8beea861959fcdcb3663  # [aarch64 and arm_variant_type=="sbsa"]
-  sha256: 8b8218447645909934712085cad0de259383b5b3f6fd8beea861959fcdcb3663  # [aarch64 and arm_variant_type=="tegra"]
+  sha256: 9debdacfd445d7c8c2bb79e90088e45544f3ed194f614d2904ab6a749b7997ca  # [aarch64 and arm_variant_type=="tegra"]
   sha256: b1221a95a3758561bc73c56905743730f7459cbaff54a4870aa899fa3489219e  # [win]
 
 build:
