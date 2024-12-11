@@ -3,11 +3,13 @@
 {% set cuda_version = "12.6" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
-{% set platform = "linux-sbsa" %}  # [aarch64]
+{% set platform = "linux-sbsa" %}  # [aarch64 and arm_variant_type=="sbsa"]
+{% set platform = "linux-aarch64" %}  # [aarch64 and arm_variant_type=="tegra"]
 {% set platform = "windows-x86_64" %}  # [win]
 {% set target_name = "x86_64-linux" %}  # [linux64]
 {% set target_name = "ppc64le-linux" %}  # [ppc64le]
-{% set target_name = "sbsa-linux" %}  # [aarch64]
+{% set target_name = "sbsa-linux" %}  # [aarch64 and arm_variant_type=="sbsa"]
+{% set target_name = "tegra-linux" %}  # [aarch64 and arm_variant_type=="tegra"]
 {% set target_name = "x64" %}  # [win]
 {% set extension = "tar.xz" %}  # [not win]
 {% set extension = "zip" %}  # [win]
@@ -19,11 +21,12 @@ package:
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvrtc/{{ platform }}/cuda_nvrtc-{{ platform }}-{{ version }}-archive.{{ extension }}
   sha256: a4289ba86f0deeccf4e1d94c58559eae4c8184fcb6eaade8fcab45584e6cf402  # [linux64]
-  sha256: 8b8218447645909934712085cad0de259383b5b3f6fd8beea861959fcdcb3663  # [aarch64]
+  sha256: 8b8218447645909934712085cad0de259383b5b3f6fd8beea861959fcdcb3663  # [aarch64 and arm_variant_type=="sbsa"]
+  sha256: 9debdacfd445d7c8c2bb79e90088e45544f3ed194f614d2904ab6a749b7997ca  # [aarch64 and arm_variant_type=="tegra"]
   sha256: b1221a95a3758561bc73c56905743730f7459cbaff54a4870aa899fa3489219e  # [win]
 
 build:
-  number: 0
+  number: 1
   binary_relocation: false
   skip: true  # [osx or ppc64le]
 
